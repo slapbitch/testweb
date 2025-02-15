@@ -1,0 +1,145 @@
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #171717; /* Темный фон */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form-container {
+    background: #232323; /* Основной цвет контейнера */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень с прозрачностью */
+    width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #bc9a50; /* Акцентный цвет для заголовка */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background: #303030; /* Основной цвет таблицы */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table tr {
+    border-bottom: 1px solid #444; /* Разделение строк */
+}
+
+.table tr:last-child {
+    border-bottom: none;
+}
+
+.table td {
+    padding: 10px 15px;
+    color: #fefafb;
+    text-align: center;
+    font-size: 14px;
+}
+
+.table tr:nth-child(1) td {
+    background: #444; /* Цвет заголовка таблицы */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #bc9a50; /* Акцентный цвет для заголовка таблицы */
+}
+
+.table tr:hover td {
+    background: #3a3a3a; /* Подсветка строки при наведении */
+    cursor: pointer;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-table .form-label {
+    font-weight: bold;
+    padding: 8px;
+    color: #bc9a50; /* Акцентный цвет для меток */
+}
+
+.form-table .form-value {
+    padding: 8px;
+    color: #fefafb;
+}
+
+.form-view {
+    margin: 20px 0;
+}
+
+.collect {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #d2981a; /* Акцентный цвет для кнопки */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.collect:hover {
+    background-color: #bc9a50; /* Цвет кнопки при наведении */
+}
+
+.ispol-form {
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #bc9a50; /* Акцентный цвет для меток */
+}
+
+.form-group select,
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #444; /* Граница полей ввода */
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #303030; /* Цвет фона полей ввода */
+    color: white;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+#bank-section,
+#card-number-section {
+    margin-top: 10px;
+}
+
+#card-number {
+    letter-spacing: 2px;
+}

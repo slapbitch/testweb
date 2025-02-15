@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+
+<div class="form-container">
+    <h2>Добавление реквизита</h2>
+    <div class="form-group" id="phone-number-group">
+        <label for="phone-number">Номер телефона</label>
+        <input type="text" id="phone-number" placeholder="Введите номер телефона">
+    </div>
+    
+    <div class="form-group" id="card-number-group">
+        <label for="card-number">Номер карты</label>
+        <input type="text" id="card-number" placeholder="Введите номер карты">
+    </div>
+
+    <div class="form-group" id="expiration-date-group">
+        <label for="expiration-date">Срок действия</label>
+        <input type="text" id="expiration-date" placeholder="Введите срок действия">
+    </div>
+
+    <div class="form-group" id="cvv-group">
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" placeholder="Введите CVV">
+    </div>
+
+    <div class="form-group" id="pin-group">
+        <label for="pin">PIN</label>
+        <input type="text" id="pin" placeholder="Введите PIN">
+    </div>
+
+    <div class="form-group" id="account-number-group">
+        <label for="account-number">Номер счета</label>
+        <input type="text" id="account-number" placeholder="Введите номер счета">
+    </div>
+
+    <div class="form-group" id="inn-group">
+        <label for="inn">ИНН</label>
+        <input type="text" id="inn" placeholder="Введите ИНН">
+    </div>
+
+    <div class="form-group" id="full-name-group">
+        <label for="full-name">ФИО</label>
+        <input type="text" id="full-name" placeholder="Введите ФИО">
+    </div>
+
+    <div class="form-group" id="birthdate-group">
+        <label for="birthdate">Дата рождения</label>
+        <input type="date" id="birthdate" placeholder="Введите дату рождения">
+    </div>
+
+    <div class="form-group" id="residence-group">
+        <label for="residence">Город</label>
+        <input type="text" id="residence" placeholder="Введите город">
+    </div>
+    <button id="submit-btn">Подтвердить</button>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

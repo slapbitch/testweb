@@ -1,0 +1,76 @@
+УСТАНОВКА NODEJS
+
+cd ~
+curl -sL https://deb.nodesource.com/setup_20.x -o /tmp/nodesource_setup.sh
+bash /tmp/nodesource_setup.sh
+
+apt install nodejs -y
+
+УСТАНОВКА POSTGRE
+
+sudo apt install postgresql postgresql-contrib
+sudo -i -u postgres
+createuser --interactive
+Вводишь имя: root
+Ответ на 2 вопрос: y
+
+УСТАНОВКА ПРОСМОТРА БД (PhpPgAdmin)
+
+sudo apt install apache2g
+sudo apt install php
+sudo apt install libapache2-mod-php
+
+Скачиваете архив phpPgAdmin-7.13.0.zip
+https://github.com/phppgadmin/phppgadmin/releases/tag/REL_7-13-0
+
+После чего содержимое закидываете в папку
+/var/www/html
+Не забудьте удалить от туда все перед тем как закидывать
+
+НАСТРОЙКА APACHE2 и PHP
+
+Открываете
+/etc/php/8.1/apache2/php.ini
+
+Туда нужно будет вставить в начало это
+extension=bz2
+extension=curl
+extension=ffi
+extension=ftp
+extension=fileinfo
+extension=gd
+extension=gettext
+extension=gmp
+extension=intl
+extension=imap
+extension=ldap
+extension=mbstring
+extension=exif       Must be after mbstring as it depends on it
+extension=mysqli
+extension=oci8_12c   Use with Oracle Database 12c Instant Client
+extension=oci8_19   Use with Oracle Database 19 Instant Client
+extension=odbc
+extension=openssl
+extension=pdo_firebird
+extension=pdo_mysql
+extension=pdo_oci
+extension=pdo_odbc
+extension=pdo_pgsql
+extension=pdo_sqlite
+extension=pgsql
+extension=shmop
+
+После всех этих манипуляций
+systemctl restart apache2
+
+ЗАПУСК СКРИПТА
+Запускать и дебажить будем через pm2
+во первых установим модули и сам pm2
+
+cd ~/ИмяПапки
+npm i
+npm i -g pm2
+
+Теперь запустим вебапп
+
+pm2 start index.js --name WebAPP

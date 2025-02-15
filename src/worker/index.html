@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+
+<div class="form-container">
+    <h2>Добавление реквизита</h2>
+    <div class="form-group">
+        <label for="payment-method">Метод пополнения</label>
+        <select id="payment-method">
+            <option value="cash">💰Курьер</option>
+            <option value="nfc">💰Cash in / NFC</option>
+            <option value="transfer">💳Перевод по счету</option>
+            <option value="sberbank">💳Перевод по сбп</option>
+            <option value="card">💳Перевод по карте</option>
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="time-validity">Время актуальности</label>
+        <input type="number" id="time-validity" min="1" max="12" placeholder="От 1 до 12 часов">
+        <span id="time-validity-error" style="color: white; display: none;">Пожалуйста, введите число от 1 до 12.</span>
+    </div>
+
+    <div class="form-group">
+        <label for="percent">Процент</label>
+        <input type="number" id="percent" min="1" max="100" placeholder="От 1 до 100">
+        <span id="percent-error" style="color: white; display: none;">Пожалуйста, введите число от 1 до 100.</span>
+    </div>
+
+    <div class="form-group">
+        <label for="limit">Лимит</label>
+        <input type="number" id="limit" min="500" max="50000" placeholder="От 500 до 50000">
+        <span id="limit-error" style="color: white; display: none;">Пожалуйста, введите число от 500 до 50000.</span>
+    </div>
+
+    <div id="bank-section" class="form-group hidden">
+        <label for="bank">Банк</label>
+        <select id="bank">
+            <option value="sberbank">Сбер</option>
+            <option value="alfabank">Альфа-Банк</option>
+            <option value="tinkoff">Тинькофф</option>
+            <option value="vtbbank">ВТБ</option>
+            <option value="ozon">Озон</option>
+            <option value="openbank">Открытие</option>
+            <option value="homebank">Хоум</option>
+            <option value="raiffaisen">Райффайзен</option>
+            <option value="rosbank">Росбанк</option>
+            <option value="pochtabank">Почта банк</option>
+            <option value="otpbank">Отп банк</option>
+            <option value="mtsbank">МТС банк</option>
+            <option value="uralbank">Урал банк</option>
+            <option value="sovkombank">Совком банк</option>
+        </select>
+    </div>
+
+    <div id="details-section" class="form-group">
+        <label for="details">Детали</label>
+        <input type="text" id="details" placeholder="Введите детали">
+    </div>
+
+    <div id="address-section" class="form-group">
+        <label for="address">Адрес</label>
+        <input type="text" id="address" placeholder="Введите адрес">
+    </div>
+    <button id="submit-btn" onclick="validateForm()">Подтвердить</button>
+</div>
+
+
+<script>
+    function validateForm() {
+        const isValidTimeValidity = validateInput('time-validity', 1, 12);
+        const isValidPercent = validateInput('percent', 1, 100);
+        const isValidLimit = validateInput('limit', 500, 50000);
+
+        if (isValidTimeValidity && isValidPercent && isValidLimit) {
+            createAndDownloadFile();
+        }
+    }
+
+    function validateInput(id, min, max) {
+        const input = document.getElementById(id);
+        const errorMessage = document.getElementById(id + '-error');
+        const value = input.value;
+
+        if (isNaN(value) || value.trim() === '' || value < min || value > max) {
+            input.classList.add('error');
+            errorMessage.style.display = 'inline';
+            return false;
+        } else {
+            input.classList.remove('error');
+            errorMessage.style.display = 'none';
+            return true;
+        }
+    }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

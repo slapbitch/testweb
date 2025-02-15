@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #171717; /* Темный фон */
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Минимальная высота для центрирования */
+}
+
+.form-container {
+    background: #232323; /* Основной цвет контейнера */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень с прозрачностью */
+    width: 320px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    max-width: 95%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #bc9a50; /* Акцентный цвет для меток */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444; /* Граница полей ввода */
+    color: #fefafb;
+    border-radius: 7px;
+    background: #303030; /* Цвет фона полей ввода */
+    font-size: 14px;
+}
+
+h2 {
+    text-align: center;
+    color: #bc9a50; /* Акцентный цвет для заголовка */
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.form-group input::placeholder {
+    color: #858c9c; /* Цвет плейсхолдера */
+}
+
+.form-group img {
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.form-group.hidden {
+    display: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #d2981a; /* Акцентный цвет для кнопки */
+    color: #fefafb;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+button:hover {
+    background: #bc9a50; /* Цвет кнопки при наведении */
+}

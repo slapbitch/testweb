@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+</head>
+<body>
+
+<div class="form-container">
+    <h2 class="head">Список заявок</h2>
+
+    <table class="table">
+        <tr>
+            <td>Цена в %</td>
+            <td>Банк 🏦</td>
+            <td>Метод 💳</td>
+            <td>Сумма 💵</td>
+        </tr>
+    </table>
+    
+    <div class="form-view hidden">
+        <table class="table form-table">
+            <tr>
+                <td class="form-label">Поле</td>
+                <td class="form-value">Значение</td>
+            </tr>
+        </table>
+        <button class="collect">Взять сделку</button>
+    </div>
+
+    <div class="menu" style="display: flex; gap: 5px; justify-content: space-between;">
+        <button class="back collect">Назад</button>
+        <button class="first collect">1</button>
+        <button class="second collect">2</button>
+        <button class="third collect">3</button>
+        <button class="next collect">Вперед</button>
+    </div>
+
+
+    <!-- <button id="submit-btn" class="form-group">Подтвердить</button> Добавлен класс form-group -->
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
